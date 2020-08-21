@@ -52,6 +52,19 @@ load_status() {
   fi
 }
 
+gpu_temp_status() {
+  local temp=$1
+  gpu_temp_medium_thresh=$(get_tmux_option "@gpu_temp_medium_thresh" "50")
+  gpu_temp_high_thresh=$(get_tmux_option "@gpu_temp_high_thresh" "60")
+  if fcomp $gpu_temp_high_thresh $temp; then
+    echo "high"
+  elif fcomp $gpu_temp_medium_thresh $temp && fcomp $temp $gpu_temp_high_thresh; then
+    echo "medium"
+  else
+    echo "low"
+  fi
+}
+
 cpus_number() {
   if is_linux; then
     nproc

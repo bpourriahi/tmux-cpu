@@ -19,8 +19,8 @@ get_fg_color_settings() {
 }
 
 print_fg_color() {
-  local gpu_percentage=$($CURRENT_DIR/gpu_percentage.sh | sed -e 's/%//')
-  local gpu_load_status=$(load_status $gpu_percentage)
+  local gpu_temp=$($CURRENT_DIR/gpu_temperature.sh | sed -e 's/%//')
+  local gpu_load_status=$(gpu_temp_status $gpu_temp)
   if [ $gpu_load_status == "low" ]; then
     echo "$gpu_low_fg_color"
   elif [ $gpu_load_status == "medium" ]; then

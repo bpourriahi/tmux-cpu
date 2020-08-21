@@ -28,6 +28,7 @@ cpu_commands=(
   "#($CURRENT_DIR/scripts/cpu_bg_color.sh)"
   "#($CURRENT_DIR/scripts/cpu_fg_color.sh)"
   "#($CURRENT_DIR/scripts/gpu_percentage.sh)"
+  "#($CURRENT_DIR/scripts/gpu_temperature.sh)"
   "#($CURRENT_DIR/scripts/gpu_icon.sh)"
   "#($CURRENT_DIR/scripts/gpu_bg_color.sh)"
   "#($CURRENT_DIR/scripts/gpu_fg_color.sh)"
